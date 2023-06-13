@@ -1,0 +1,58 @@
+//QUESTÃO 1:
+function listarPrimos() {
+  var primos = [];
+
+  for (let numero = 1; numero <= 1000; numero++) {
+    let ehPrimo = true;
+
+    if (numero === 1) {
+      ehPrimo = false;
+    }
+
+    for (let i = 2; i <= Math.sqrt(numero); i++) {
+      if (numero % i === 0) {
+        ehPrimo = false;
+        break;
+      }
+    }
+
+    if (ehPrimo) {
+      primos.push(numero);
+    }
+  }
+
+  return primos;
+
+// Exibir os números primos na tela
+console.log("Números primos entre 1 e 1000:");
+console.log(numerosPrimos);
+}
+
+
+
+//QUESTÃO 2:
+
+
+function verificarSenha() {
+    var senha = prompt("Digite sua senha");
+    
+  // Verificar o comprimento mínimo da senha
+  if (senha.length < 8) {
+    alert ("A senha deve ter pelo menos 8 caracteres.");
+  }
+
+  // Verificar se contém pelo menos uma letra maiúscula, uma letra minúscula e um número
+  if (!/[A-Z]/.test(senha)) {
+    alert ("A senha deve conter pelo menos uma letra maiúscula.");
+  } 
+  else if (!/[a-z]/.test(senha)) {
+      alert ("A senha deve conter pelo menos uma letra minúscula.");
+  } 
+  else if (!/[0-9]/.test(senha)) {
+      alert ("A senha deve conter pelo menos um número.");
+  } 
+    else {
+      alert ("A senha é válida!");
+  }
+    
+}
